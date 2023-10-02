@@ -25,10 +25,14 @@ const MainPage = () => {
   if (loading) {
     console.log(fetchedData);
     console.log(fetchedData.current.is_day);
-    let code = conditions.filter((obj) => obj.code === fetchedData.current.condition.code);
+    let code = conditions.filter(
+      (obj) => obj.code === fetchedData.current.condition.code
+    );
     const icon = code[0].icon;
     let path = "";
-    fetchedData.current.is_day=== 1 ? (path = `Icons/day/${icon}.png`) : (path = `Icons/night/${icon}.png`);
+    fetchedData.current.is_day === 1
+      ? (path = `Icons/day/${icon}.png`)
+      : (path = `Icons/night/${icon}.png`);
 
     return (
       <div className="container">
@@ -41,7 +45,6 @@ const MainPage = () => {
                   {fetchedData.current.temp_f + "\xB0 F"}
                 </h1>
                 <h2>
-                  Results for :
                   <span>
                     {fetchedData.location.name},{fetchedData.location.region}
                   </span>
@@ -82,70 +85,246 @@ const MainPage = () => {
         </div>
 
         <div className="box-2">
-          <div className="weather-forecast">
-            <div id="carouselExample" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <svg
-                    class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-                    width="800"
-                    height="400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Placeholder: First slide"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                  >
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                    <text x="50%" y="50%" fill="#555" dy=".3em">
-                      First slide
-                    </text>
-                  </svg>
+          <div className="card mb-4 gradient-custom rounded">
+            <div className="card-body my-4">
+              <h5 className="text-center pb-4">Hourly Forecast</h5>
+              <div
+                id="carouselExampleIndicators"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div
+                  className="carousel-inner px-2"
+                  style={{ fontWeight: "600" }}
+                >
+                  <div className="carousel-item active">
+                    <div className="d-flex justify-content-around ">
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[0].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">00:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[1].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">01:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[2].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">02:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[3].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">03:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[4].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">04:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[5].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">05:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[6].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">06:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[7].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">07:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[8].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">08:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[9].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">09:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[10].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">10:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[11].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">11:00</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item ">
+                    <div className="d-flex justify-content-around">
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[12].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">12:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[13].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">13:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[14].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">14:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[15].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">15:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[16].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">16:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[17].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">17:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[18].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">18:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[19].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">19:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[20].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">20:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[21].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">21:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[22].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">22:00</p>
+                      </div>
+                      <div className="flex-column">
+                        <p className="small">
+                          {fetchedData.forecast.forecastday[0].hour[23].temp_c +
+                            "\xB0" +
+                            "C"}
+                        </p>
+                        <p className="mb-0">23:00</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="carousel-item">
-                  <svg
-                    class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
-                    width="800"
-                    height="400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Placeholder: Second slide"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                  >
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#666"></rect>
-                    <text x="50%" y="50%" fill="#444" dy=".3em">
-                      Second slide
-                    </text>
-                  </svg>
-                </div>
+                <button
+                  className="carousel-control-prev"
+                  style={{ marginLeft: "-7%" }}
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  style={{ marginRight: "-7%" }}
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExample"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
         </div>
