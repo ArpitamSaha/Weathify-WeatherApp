@@ -35,6 +35,9 @@ const MainPage = () => {
       : (path = `Icons/night/${icon}.png`);
 
     return (
+
+      // Upper Box 
+
       <div className="container">
         <div className="box-1">
           <div className="current-temp">
@@ -84,6 +87,8 @@ const MainPage = () => {
           </div>
         </div>
 
+      {/* Lower Box */}
+
         <div className="box-2">
           <div className="card mb-4 gradient-custom rounded">
             <div className="card-body my-4">
@@ -101,7 +106,7 @@ const MainPage = () => {
                     <div className="d-flex justify-content-around ">
                       <div className="flex-column">
                         <p className="small">
-                          {fetchedData.forecast.forecastday[0].hour[0].temp_c +
+                          {fetchedData.forecast.forecastday[0].hour[1].temp_c +
                             "\xB0" +
                             "C"}
                         </p>
