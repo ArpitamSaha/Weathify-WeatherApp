@@ -1,9 +1,36 @@
-.container{
-    height: 80vh;
+.home-container {
+    width: 100%;
+    height: 83.3vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    .input-group{
-        width: 35%;
+    justify-content: space-evenly;
+    .search-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+
+        .input-grp {
+            width: 35%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.3rem;
+
+            .input-search {
+                height: 1.1rem;
+                padding: 1.2rem .3rem;
+                font-size: 1.5rem;
+                border: none;
+                border-bottom: 2px solid #1c1d20;
+            }
+
+            .input-btn {
+                border: none;
+                background: transparent;
+            }
+        }
     }
 }
