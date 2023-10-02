@@ -1,8 +1,9 @@
 .container{
+    width: 100%;
+    height: 83.3vh;
     display: flex;
     flex-direction: column;
     z-index: -1;
-    margin: 2rem ;
 
     .box-1{
         margin: 1rem;
