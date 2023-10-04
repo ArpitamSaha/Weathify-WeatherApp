@@ -59,28 +59,6 @@ const HomePage = () => {
       </div>
     </div>
 
-    // <div className="container">
-    //   <div className="input-group rounded mx-3">
-    //     <div search-btn-grp>
-    //       <input
-    //         type="search"
-    //         className="form-control rounded "
-    //         onChange={search}
-    //         placeholder="Search"
-    //         aria-label="Search"
-    //         aria-describedby="search-addon"
-    //       />
-    //       <button
-    //         className="input-group-text border-0 search-btn"
-    //         id="search-addon"
-    //         onClick={searchCity}
-    //       >
-    //         Search
-    //       </button>
-    //     </div>
-    //   </div>
-    //   <div id="error"></div>
-    // </div>
   );
 };
 
