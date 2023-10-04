@@ -5,7 +5,7 @@ const Navbar = () => {
     <div id='home'>
       <nav className="navbar bg-body-tertiary bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand text-dark heading" href="#home">Weathify</a>
+          <a className="navbar-brand text-dark heading" href="/">Weathify</a>
         </div>
       </nav>
     </div>
